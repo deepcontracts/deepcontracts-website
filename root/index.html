@@ -14,7 +14,7 @@
 
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top py-0" style="background-color: #333333;">
-      <a class="navbar-brand mb-0 d-flex align-items-center" href="#home.md">
+      <a class="navbar-brand mb-0 d-flex align-items-center" href="#pages/home.md">
         <img src="img/dc_logo.png" width="32" height="32" class="ms-2 mt-1">
         <span class="h1 ms-2 mb-0">DeepContracts</span>
       </a>
@@ -26,10 +26,10 @@
         <ul class="navbar-nav mr-auto">
 
           <li class="nav-item active">
-            <a class="nav-link" href="#multisignature-tools.md">MultiSignature Tools</a>
+            <a class="nav-link" href="#pages/multisignature-tools.md">MultiSignature Tools</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#marketplace-tools.md">Marketplace Tools</a>
+            <a class="nav-link" href="#pages/marketplace-tools.md">Marketplace Tools</a>
           </li>
 
           <li class="nav-item d-flex align-items-center">
@@ -73,109 +73,6 @@
 
 <!-- <script src="https://raw.githubusercontent.com/markedjs/marked/master/marked.min.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/marked@13.0.3/marked.min.js"></script>
-<script>
-
-var request;
-var currentPage;
-
-function getPage(href) {
-  currentPage = href;
-  url = `https://raw.githubusercontent.com/deepcontracts/deepcontracts-website/master/${href}`;
-
-  if (window.XMLHttpRequest) {
-    request = new XMLHttpRequest();
-  }
-  else if (window.ActiveXObject) {
-    request = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-
-  try {
-    request.onreadystatechange = function(){embedPage(href)};
-    request.open("GET", url, true);
-    request.send();
-  }
-  catch (e) {
-    alert("Unable to connect to server");
-  }
-}
-
-const renderer = {
-  link(href, title, text) {
-    if (href.startsWith("https://") || href.startsWith("http://")) {
-      return `
-        <a href="${href}"${title?` title="${title}`:""}>
-          ${text}
-        </a>
-      `;
-    } else {
-      return `
-        <a href="#${href}"${title?` title="${title}`:""}>
-          ${text}
-        </a>
-      `;
-    }
-  },
-  heading(text, level) {
-    return `
-      <h${level}>
-        <div style="text-decoration: underline;">
-          ${text}
-        </div>
-      </h${level}>
-    `;
-  },
-  image(href, title, text) {
-    if (href === null) {
-      return text;
-    }
-
-    let out = `<BR><img src="${href.startsWith("root/")?href.substring(5):href}" alt="${text}"`;
-    if (title) {
-      out += ` title="${title}"`;
-    }
-    out += '>';
-    return out;
-  },
-  table(header, body) {
-    if (body) body = `<tbody>${body}</tbody>`;
-
-    return '<table style="width:100%">\n'
-      + '<thead>\n'
-      + header
-      + '</thead>\n'
-      + body
-      + '</table><BR>\n';
-  }
-
-}
-
-marked.use({ renderer });
-
-function embedPage(href) {
-  if (request.readyState == 4) {
-    if (href=="home.md") {
-      history.replaceState(null, "", window.location.pathname);
-    }
-    var val = request.responseText;
-    document.getElementById('page').innerHTML = window.marked.marked(val);
-    window.scrollTo({ top: 0});
-  }
-}
-
-if(window.location.hash) {
-  getPage(window.location.hash.substring(1));
-} else {
-  getPage("home.md");
-}
-
-window.onpopstate = function(event) {
-  if(window.location.hash) {
-    getPage(window.location.hash.substring(1));
-  } else {
-    getPage("home.md");
-  }
-};
-
-</script>
+<script src="/scripts/script.js"></script> <!-- Link to your external JS file -->
 
 </html>
