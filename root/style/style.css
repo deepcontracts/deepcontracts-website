@@ -1,11 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Jura');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
-  font-family: 'Jura', jura;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #33006F, #4361ee, #00308F);
+  background-size: 150% 150%;
+  animation: gradientShift 200s ease infinite;
+  color: #ffffff;
+  height: 100vh;
+  margin: 0;
 }
 
-.navbar {
-  background-color: #333333;
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar, footer .navbar {
+  background-color: hsla(0, 0%, 7%, .95);
 }
 
 .navbar-brand {
@@ -33,10 +51,7 @@ body {
 .container-fluid {
   position: absolute;
   top: 66px;
-}
-
-footer .navbar {
-  background-color: #333333;
+  padding-bottom: 50px;
 }
 
 footer .navbar-text {
@@ -44,4 +59,21 @@ footer .navbar-text {
   font-size: 1.25rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+
+.horizontal-paragraphs {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.horizontal-paragraphs p {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  background-color: #00308F;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

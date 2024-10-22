@@ -39,9 +39,30 @@ const renderer = {
     }
   },
   heading(text, level) {
+    let headingStyle = '';
+    switch (level) {
+      case 1:
+        headingStyle = ` font-size: 1.4em; font-weight: bold; color: #ffffff; text-align: center; margin: 20px 0; font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, sans-serif;`;
+    break;
+      case 2:
+        headingStyle = 'font-size: 1.75em; font-weight: bold;';
+        break;
+      case 3:
+        headingStyle = 'font-size: 1.5em; font-weight: bold; font-family: Diatype, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; margin-top: 1em;';
+        break;
+      case 4:
+        headingStyle = 'font-size: 1.25em;';
+        break;
+      case 5:
+        headingStyle = 'font-size: 0.950em; font-style: italic; font-family: BinancePlex, NotoSansSinhala, Arial, sans-serif;';
+        break;
+      case 6:
+        headingStyle = 'font-size: 0.950em; font-style: italic; color: #ffffff; text-align: center; margin: 20px 0';
+        break;
+    }
     return `
       <h${level}>
-        <div style="text-decoration: underline;">
+        <div style="${headingStyle}">
           ${text}
         </div>
       </h${level}>
@@ -68,6 +89,19 @@ const renderer = {
       + '</thead>\n'
       + body
       + '</table><BR>\n';
+  },
+  paragraph(text) {
+    if (text.startsWith(":::horizontal")) {
+      const paragraphs = text.split(":::horizontal")[1].split("\n").filter(p => p.trim() !== '');
+      return `
+        <div class="horizontal-paragraphs">
+          <p>${paragraphs[0]}</p>
+          <p>${paragraphs[1]}</p>
+          <p>${paragraphs[2]}</p>
+        </div>
+      `;
+    }
+    return `<p>${text}</p>`;
   }
 };
 
