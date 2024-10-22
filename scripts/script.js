@@ -3,7 +3,7 @@ var currentPage;
 
 function getPage(href) {
   currentPage = href;
-  url = `https://raw.githubusercontent.com/deepcontracts/deepcontracts-website/master/${href}`;
+  url = `https://raw.githubusercontent.com/deepcontracts/deepcontracts-website/main/${href}`;
 
   if (window.XMLHttpRequest) {
     request = new XMLHttpRequest();
