@@ -1,7 +1,7 @@
 # Welcome to **Deepcontracts**
 ###### "Cutting-edge blockchain solutions that boost security and operational efficiency for businesses, individuals, and decentralized platforms."
 
-
+---
 ### Our Tools
 
 ##### We provide advanced multisignature tools to protect your digital assets by requiring multiple authorizations for transactions.

@@ -8,6 +8,7 @@ body {
   color: #ffffff;
   height: 100vh;
   margin: 0;
+  margin-bottom: 23em;
 }
 
 @keyframes gradientShift {
@@ -66,7 +67,7 @@ footer .navbar-text {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  margin: 20px 0;
+  padding: 10px;
 }
 
 .horizontal-paragraphs p {

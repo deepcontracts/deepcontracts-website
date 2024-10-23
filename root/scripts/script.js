@@ -49,16 +49,16 @@ const renderer = {
         headingStyle = 'font-size: 1.75em; font-weight: bold;';
         break;
       case 3:
-        headingStyle = 'font-size: 1.5em; font-weight: bold; font-family: Diatype, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; margin-top: 1em;';
+        headingStyle = 'font-size: 1.4em; font-weight: bold; font-family: Diatype, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; padding: 10px;';
         break;
       case 4:
         headingStyle = 'font-size: 1.25em;';
         break;
       case 5:
-        headingStyle = 'font-size: 0.950em; font-style: italic; font-family: BinancePlex, NotoSansSinhala, Arial, sans-serif;';
+        headingStyle = 'font-size: 0.950em; font-style: italic; font-family: BinancePlex, NotoSansSinhala, Arial, sans-serif; padding: 10px;';
         break;
       case 6:
-        headingStyle = 'font-size: 0.950em; font-style: italic; color: #ffffff; text-align: center; margin: 20px 0';
+        headingStyle = 'font-size: 0.950em; font-style: italic; color: #ffffff; text-align: center; padding: 15px 0';
         break;
     }
     return `
