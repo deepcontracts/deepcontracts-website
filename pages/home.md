@@ -32,10 +32,11 @@
 ###### "Our team is our greatest asset. Each professional at **Deepcontracts** brings a wealth of experience and expertise, driving our success in the blockchain industry."
 ---
 
-### Our Team’s Experience:
-- Decades of expertise in blockchain security, smart contracts, and payment systems.
-- Key contributors to the **Mastercard payment system** integration with blockchain.
+### Our Partner Experiences:
+- Expertise in blockchain security, smart contracts, and payment systems.
+- Key contributors to the **Mastercard payment system** integration with blockchain. deve diventare key contributors to an R&D project to implement cross border payments backed by a bespoke blockchain solutions.
 - Developed blockchain solutions for a **digital art museum/gallery** and various NFT platforms.
+- Experience in developing backend solutions for top tier **Sony Playstation** gaming franchises to support their online experience
 - ...
 
 ---
